@@ -1,0 +1,127 @@
+.about-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .about-intro {
+    margin-bottom: 4rem;
+  }
+  
+  .about-intro h1 {
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .about-intro h1:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    background: var(--primary-color);
+    bottom: -10px;
+    left: 0;
+    border-radius: 2px;
+  }
+  
+  .about-intro p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
+  
+  .education, .experience, .community-service, .organizations, .achievements {
+    margin-bottom: 3rem;
+  }
+  
+  .education h2, .experience h2, .community-service h2, .organizations h2, .achievements h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* New achievements grid layout */
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .achievement-card {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+  }
+  
+  .achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  }
+  
+  .achievement-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    font-size: 1.8rem;
+    color: white;
+  }
+  
+  .achievement-icon.first {
+    background: linear-gradient(145deg, #FFD700, #FFC107); /* Gold */
+  }
+  
+  .achievement-icon.bronze {
+    background: linear-gradient(145deg, #CD7F32, #A05A2C); /* Bronze */
+  }
+  
+  .achievement-icon.third {
+    background: linear-gradient(145deg, #6A8EAE, #5D7FA3); /* Blue */
+  }
+  
+  .achievement-icon.outstanding {
+    background: linear-gradient(145deg, #9C27B0, #673AB7); /* Purple */
+  }
+  
+  .achievement-content {
+    padding: 1rem;
+    flex: 1;
+  }
+  
+  .achievement-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .achievement-content p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+  
+  .achievement-date {
+    display: block;
+    font-size: 0.8rem;
+    color: #777;
+  }
+  
+  @media (max-width: 768px) {
+    .about-intro h1 {
+      font-size: 2rem;
+    }
+    
+    .about-intro p {
+      font-size: 1rem;
+    }
+    
+    .achievements-grid {
+      grid-template-columns: 1fr;
+    }
+  }
