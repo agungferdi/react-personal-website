@@ -1,89 +1,189 @@
 .contact-page {
-    padding: 2rem 0;
-  }
-  
+  padding: 1.5rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-page h1 {
+  text-align: center;
+  font-size: 2.2rem; /* Reduced from 2.5rem */
+  margin-bottom: 2rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  width: 100%; /* Full width to center properly */
+  left: 0; /* Reset left positioning */
+  transform: none; /* Remove transform that was causing issues */
+  display: block; /* Changed from inline-block */
+  position: relative;
+}
+
+.contact-page h1:after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 4px;
+  background: var(--primary-color);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-info-panel {
+  background-color: var(--card-bg, white);
+  padding: 1.25rem;
+  border-radius: var(--border-radius, 8px);
+  box-shadow: var(--card-shadow, 0 5px 15px rgba(0,0,0,0.05));
+}
+
+.contact-item {
+  margin-bottom: 1.25rem;
+}
+
+.contact-item h3 {
+  font-size: 1rem; /* Reduced from 1.1rem */
+  margin-bottom: 0.4rem;
+  color: var(--primary-color);
+}
+
+.contact-item p {
+  margin: 0;
+  font-size: 0.9rem; /* Reduced from 0.95rem */
+}
+
+.social-links h3 {
+  font-size: 1rem; /* Reduced from 1.1rem */
+  margin-bottom: 0.4rem;
+  color: var(--primary-color);
+}
+
+.links-container {
+  display: flex;
+  gap: 1rem; /* Increased gap between social icons */
+}
+
+/* Updated social media links styling with bigger icons */
+.links-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.links-container a:hover {
+  background-color: var(--accent-color, #8b5cf6);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+/* Smaller form container */
+.contact-form-container {
+  background-color: var(--card-bg, white);
+  padding: 1.5rem;
+  border-radius: var(--border-radius, 8px);
+  box-shadow: var(--card-shadow, 0 5px 15px rgba(0,0,0,0.05));
+  width: 80%;
+}
+
+/* Reduced spacing between form elements */
+.contact-form .form-group {
+  margin-bottom: 0.9rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: var(--text-dark, #2d3748);
+  font-size: 0.9rem;
+}
+
+/* Smaller form inputs */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background-color: #f8fafc;
+  color: #4a5568;
+  transition: all 0.3s ease;
+  font-size: 0.9rem; /* Reduced from 0.95rem */
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb, 59, 130, 246), 0.15);
+}
+
+/* Smaller text area */
+.contact-form textarea {
+  min-height: 100px;
+  max-height: 120px;
+  resize: vertical;
+}
+
+.success-message {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.success-message h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.success-message button {
+  margin-top: 0.75rem;
+}
+
+/* Error message styling */
+.error-message {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+@media (max-width: 768px) {
   .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .contact-info-panel {
-    background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-  }
-  
-  .contact-item {
-    margin-bottom: 1.5rem;
-  }
-  
-  .contact-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-  }
-  
-  .social-links h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-  }
-  
-  .links-container {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .links-container a {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: var(--border-radius);
-    transition: var(--transition);
-  }
-  
-  .links-container a:hover {
-    background-color: var(--secondary-color);
-    text-decoration: none;
+    grid-template-columns: 1fr;
   }
   
   .contact-form-container {
-    background-color: var(--card-bg);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
+    padding: 1.25rem;
+    width: 100%;
   }
   
-  .contact-form .form-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  .contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-  
-  .success-message {
-    text-align: center;
-    padding: 2rem;
-  }
-  
-  .success-message h3 {
-    color: var(--primary-color);
+  .contact-item {
     margin-bottom: 1rem;
   }
   
-  .success-message button {
-    margin-top: 1rem;
+  .contact-page h1 {
+    font-size: 1.8rem; /* Further reduced for mobile */
   }
-  
-  @media (max-width: 768px) {
-    .contact-container {
-      grid-template-columns: 1fr;
-    }
-  }
+}

@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom'
 import Button from '../components/common/Button'
 import './Home.css'
-// Import profile image
 import profileImage from '../assets/cek.jpeg'
-// Import icons for each technology
 import { ReactNode } from 'react'
 import { 
   FaPython, 
@@ -12,16 +10,23 @@ import {
   FaDatabase,
   FaDocker, 
   FaDigitalOcean, 
-  FaMicrosoft 
+  FaMicrosoft,
+  FaReact,
+  FaHtml5,
+  FaCss3Alt
 } from 'react-icons/fa6'
 import { 
   SiGo, 
   SiTensorflow, 
   SiOpencv, 
-  SiScikitlearn 
+  SiScikitlearn,
+  SiSvelte,
+  SiBootstrap,
+  SiJavascript,
+  SiRaspberrypi
 } from 'react-icons/si'
 
-// Create SkillItem component with proper TypeScript types
+
 type SkillItemProps = {
   icon: ReactNode;
   children: ReactNode;
@@ -41,7 +46,7 @@ const Home = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1>Muhammad Agung Ferdiansyah</h1>
-            <h2>Machine Learning & Full Stack Engineer</h2>
+            <h2>Full Stack and Machine Learning Engineer</h2>
             <p>
               Fresh graduate from Brawijaya University specializing in machine learning engineering 
               and backend development with experience in Python, Golang, and IoT applications.
@@ -67,22 +72,37 @@ const Home = () => {
           <div className="skill-category">
             <h3>Backend Development</h3>
             <ul>
-              <SkillItem icon={<FaPython />}>Python (Flask, FastAPI)</SkillItem>
               <SkillItem icon={<SiGo />}>Golang</SkillItem>
+              <SkillItem icon={<FaPython />}>Python (Flask, FastAPI)</SkillItem>
               <SkillItem icon={<FaNodeJs />}>Node.js</SkillItem>
               <SkillItem icon={<FaPhp />}>PHP (Laravel)</SkillItem>
-              <SkillItem icon={<FaDatabase />}>SQL (MySQL, PostgreSQL)</SkillItem>
+              <SkillItem icon={<FaDatabase />}>MySQL & PostgreSQL</SkillItem>
             </ul>
           </div>
+          
           <div className="skill-category">
-            <h3>Machine Learning</h3>
+            <h3>Frontend Development</h3>
             <ul>
-              <SkillItem icon={<SiTensorflow />}>TensorFlow & PyTorch</SkillItem>
-              <SkillItem icon={<span className="custom-icon yolo">YL</span>}>YOLO</SkillItem>
-              <SkillItem icon={<SiOpencv />}>OpenCV</SkillItem>
-              <SkillItem icon={<SiScikitlearn />}>Scikit-Learn</SkillItem>
+              <SkillItem icon={<FaReact />}>React</SkillItem>
+              <SkillItem icon={<SiSvelte />}>Svelte</SkillItem>
+              <SkillItem icon={<SiJavascript />}>JavaScript</SkillItem>
+              <SkillItem icon={<SiBootstrap />}>Bootstrap</SkillItem>
+              <SkillItem icon={<FaHtml5 />}>HTML5</SkillItem>
+              <SkillItem icon={<FaCss3Alt />}>CSS3</SkillItem>
             </ul>
           </div>
+          
+          <div className="skill-category">
+  <h3>Machine Learning</h3>
+  <ul>
+    <SkillItem icon={<SiTensorflow />}>TensorFlow & PyTorch</SkillItem>
+    <SkillItem icon={<span className="custom-icon yolo">YL</span>}>YOLO</SkillItem>
+    <SkillItem icon={<SiOpencv />}>OpenCV</SkillItem>
+    <SkillItem icon={<SiScikitlearn />}>Scikit-Learn</SkillItem>
+    <SkillItem icon={<SiRaspberrypi />}>Raspberry Pi</SkillItem>
+  </ul>
+</div>
+          
           <div className="skill-category">
             <h3>Cloud & DevOps</h3>
             <ul>

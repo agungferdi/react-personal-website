@@ -1,50 +1,63 @@
 .footer {
-    background: linear-gradient(to right, #2c3e50, #4b6cb7);
-    color: white;
-    padding: 2rem;
-    margin-top: 4rem;
-  }
-  
+  background: linear-gradient(to right, #2c3e50, #4b6cb7);
+  color: white;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Styled circular icon backgrounds */
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Larger icon size */
+.footer-icon {
+  font-size: 1.6rem;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
   .contact-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
-  }
-  
-  .contact-info p {
-    margin: 0;
-    font-size: 0.9rem;
-  }
-  
-  .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .social-links a {
-    display: inline-block;
-    color: white;
-    transition: transform 0.3s ease;
-  }
-  
-  .social-links a:hover {
-    transform: translateY(-3px);
-    color: #a3c0ff;
-  }
-  
-  .copyright {
+    flex-direction: column;
     text-align: center;
-    font-size: 0.9rem;
-    margin: 0;
-    opacity: 0.8;
+    gap: 0.5rem;
   }
-  
-  @media (max-width: 768px) {
-    .contact-info {
-      flex-direction: column;
-      text-align: center;
-      gap: 0.5rem;
-    }
-  }
+}

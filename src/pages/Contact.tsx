@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Button from '../components/common/Button'
 import './Contact.css'
+import { FaGithub, FaLinkedin } from 'react-icons/fa6'
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser'
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +14,8 @@ const Contact = () => {
   })
   
   const [submitted, setSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -19,17 +24,48 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the data to your backend or email service
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
+    setIsLoading(true)
+    setError(null)
+    
+    // First, send the notification email to your inbox
+    emailjs.sendForm(
+      'service_j9f4a1p',
+      'template_cjtsqkh', 
+      formRef.current as HTMLFormElement,
+      'ldwnVcIn0uMfRRUnB'
+    )
+    .then(() => {
+      // Then send the auto-reply to the user
+      return emailjs.send(
+        'service_j9f4a1p',
+        'template_mqe471b', // Your auto-reply template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: formData.email // Send to the user who submitted the form
+        },
+        'ldwnVcIn0uMfRRUnB'
+      );
     })
-    // You could add actual form submission logic here
+    .then((result: EmailJSResponseStatus) => {
+      console.log('Emails sent successfully:', result.text)
+      setSubmitted(true)
+      setIsLoading(false)
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      })
+    })
+    .catch((error: Error) => {
+      console.error('Failed to send email:', error)
+      setError('There was a problem sending your message. Please try again.')
+      setIsLoading(false)
+    })
   }
 
   return (
@@ -56,8 +92,12 @@ const Contact = () => {
           <div className="social-links">
             <h3>Connect with me</h3>
             <div className="links-container">
-              <a href="https://linkedin.com/in/muhammad-agung-ferdiansyah-" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://github.com/agungferdi" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://linkedin.com/in/muhammad-agung-ferdiansyah-" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <FaLinkedin />
+              </a>
+              <a href="https://github.com/agungferdi" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <FaGithub />
+              </a>
             </div>
           </div>
         </div>
@@ -70,7 +110,9 @@ const Contact = () => {
               <Button onClick={() => setSubmitted(false)}>Send another message</Button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="contact-form">
+            <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
+              {error && <div className="error-message">{error}</div>}
+              
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input 
@@ -114,12 +156,14 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={5}
+                  rows={4}
                   required
                 ></textarea>
               </div>
               
-              <Button type="submit" variant="primary">Send Message</Button>
+              <Button type="submit" variant="primary" disabled={isLoading}>
+                {isLoading ? 'Sending...' : 'Send Message'}
+              </Button>
             </form>
           )}
         </div>

@@ -1,9 +1,16 @@
 import './Projects.css'
 import { FaGithub, FaArrowUpRightFromSquare } from 'react-icons/fa6' 
-import { SiGo, SiPython, SiMysql, SiFlask, SiDocker, SiRaspberrypi, SiHtml5, SiOpencv, SiTensorflow, SiPhp } from 'react-icons/si'
+import { SiGo, SiPython, SiMysql, SiFlask, SiDocker, SiRaspberrypi, SiHtml5, SiOpencv, SiTensorflow, SiPhp, SiJavascript, SiBootstrap, SiReact } from 'react-icons/si'
 import { ReactNode } from 'react'
+import storeImage from '../assets/store.png'
+import compostImage from '../assets/compost.png'
+import cornImage from '../assets/corn.png'
+import umkmImage from '../assets/umkm.png'
+import walletImage from '../assets/wallet.png'
+import pythonCrudImage from '../assets/index.png'
+import coffeeImage from '../assets/coffee.png'
 
-// Define project type for better organization
+
 type ProjectLink = {
   label: string;
   url: string;
@@ -27,13 +34,14 @@ type Project = {
 }
 
 const Projects = () => {
-  // Project data with updated details from GitHub and information provided
+  
   const projects: Project[] = [
     {
       id: "golang-web-store",
       title: "Golang Personal Web Store with Midtrans Payment",
       timeframe: "February 2025 – Present",
       description: "A Go-based eCommerce platform with integrated payment gateway, shopping cart and order tracking.",
+      image: storeImage,
       bulletPoints: [
         "Built a Go-based eCommerce platform with Midtrans payment gateway integration",
         "Implemented shopping cart, checkout, and order tracking with real-time payment status updates",
@@ -42,39 +50,22 @@ const Projects = () => {
       ],
       technologies: [
         { name: "Golang", icon: <SiGo /> },
-        { name: "MySQL", icon: <SiMysql /> }
+        { name: "MySQL", icon: <SiMysql /> },
+        { name: "HTML/CSS", icon: <SiHtml5 /> },
+        { name: "JavaScript", icon: <SiJavascript /> }
       ],
       links: [
         { label: "GitHub", url: "https://github.com/agungferdi/golang-web-payment-itegration" }
       ],
       featured: true
     },
-    {
-      id: "ukm-monitoring",
-      title: "UKM Monitoring Web Application",
-      timeframe: "January – April 2023",
-      description: "A PHP-based monitoring system for Small and Medium Enterprises (UKMs) with financial tracking and performance analytics.",
-      bulletPoints: [
-        "Designed and developed a complete monitoring system for small and medium enterprise management",
-        "Implemented financial tracking, inventory management, and performance analytics dashboards",
-        "Created user management system with role-based access for administrators and business owners",
-        "Built with PHP, MySQL, and responsive Bootstrap interface for cross-platform compatibility"
-      ],
-      technologies: [
-        { name: "PHP", icon: <SiPhp /> },
-        { name: "MySQL", icon: <SiMysql /> },
-        { name: "HTML/CSS", icon: <SiHtml5 /> }
-      ],
-      links: [
-        { label: "GitHub", url: "https://github.com/agungferdi/ukm-monitoring-web-app-based-php" }
-      ],
-      featured: true
-    },
+    
     {
       id: "python-crud-app",
       title: "Python Full-Stack CRUD App",
       timeframe: "March 2025 – Present",
       description: "A comprehensive web application for managing customer data with responsive design and Docker containerization.",
+      image: pythonCrudImage,
       bulletPoints: [
         "Developed a full-stack web app for customer data management",
         "Built with HTML5, CSS3, Bootstrap 5, and JavaScript",
@@ -85,7 +76,9 @@ const Projects = () => {
         { name: "Python", icon: <SiPython /> },
         { name: "MySQL", icon: <SiMysql /> },
         { name: "Docker", icon: <SiDocker /> },
-        { name: "HTML/CSS", icon: <SiHtml5 /> }
+        { name: "Bootstrap", icon: <SiBootstrap /> },
+        { name: "HTML/CSS", icon: <SiHtml5 /> },
+        { name: "JavaScript", icon: <SiJavascript /> }
       ],
       links: [
         { label: "GitHub", url: "https://github.com/agungferdi/python-full-stack-crud-customers" }
@@ -96,6 +89,7 @@ const Projects = () => {
       title: "ML Web App for Corn Seed Classification",
       timeframe: "October - December 2024",
       description: "A machine learning application that classifies and counts corn seeds with 98% accuracy in 0.2 seconds.",
+      image: cornImage,
       bulletPoints: [
         "Achieved 98% classification accuracy with just 0.2 seconds processing time per image",
         "Developed user-friendly web interface with camera capture and image upload features",
@@ -106,7 +100,8 @@ const Projects = () => {
         { name: "Python", icon: <SiPython /> },
         { name: "Flask", icon: <SiFlask /> },
         { name: "TensorFlow", icon: <SiTensorflow /> },
-        { name: "OpenCV", icon: <SiOpencv /> }
+        { name: "OpenCV", icon: <SiOpencv /> },
+        { name: "JavaScript", icon: <SiJavascript /> }
       ],
       links: [
         { label: "GitHub", url: "https://github.com/agungferdi/ml-webapp-corn-classification" }
@@ -114,10 +109,57 @@ const Projects = () => {
       featured: true
     },
     {
+      id: "ukm-monitoring",
+      title: "UKM Monitoring Web Application",
+      timeframe: "January – April 2023",
+      description: "A PHP-based monitoring system for Small and Medium Enterprises (UKMs) with financial tracking and performance analytics.",
+      image: umkmImage,
+      bulletPoints: [
+        "Designed and developed a complete monitoring system for small and medium enterprise management",
+        "Implemented financial tracking, inventory management, and performance analytics dashboards",
+        "Created user management system with role-based access for administrators and business owners",
+        "Built with PHP, MySQL, and responsive Bootstrap interface for cross-platform compatibility"
+      ],
+      technologies: [
+        { name: "PHP", icon: <SiPhp /> },
+        { name: "MySQL", icon: <SiMysql /> },
+        { name: "HTML/CSS", icon: <SiHtml5 /> },
+        { name: "Bootstrap", icon: <SiBootstrap /> },
+        { name: "JavaScript", icon: <SiJavascript /> }
+      ],
+      links: [
+        { label: "GitHub", url: "https://github.com/agungferdi/ukm-monitoring-web-app-based-php" }
+      ],
+      featured: true
+    },
+    {
+      id: "smart-composter",
+      title: "Smart Composter Full Stack IoT",
+      timeframe: "2023",
+      description: "An IoT-based composter with automated controls, designed in AutoCAD and powered by Raspberry Pi.",
+      image: compostImage,
+      bulletPoints: [
+        "Designed automated composting system with temperature and moisture monitoring",
+        "Programmed Raspberry Pi to control aeration and mixing based on sensor readings",
+        "Created mobile app interface for remote monitoring and control",
+        "Implemented data logging for composting process optimization"
+      ],
+      technologies: [
+        { name: "Python", icon: <SiPython /> },
+        { name: "Raspberry Pi", icon: <SiRaspberrypi /> },
+        { name: "React", icon: <SiReact /> },
+        { name: "JavaScript", icon: <SiJavascript /> }
+      ],
+      links: [
+        { label: "GitHub", url: "https://github.com/agungferdi/full-stack-iot-composter-using-react-and-python" }
+      ]
+    },
+    {
       id: "coffee-storage-app",
       title: "Coffee Bean Storage App for KTH Wonosantri",
       timeframe: "June – August 2023",
       description: "CRUD-based system to manage raw coffee stock, processing, and packaging for a real business client.",
+      image: coffeeImage,
       bulletPoints: [
         "Created a complete inventory system for KTH Wonosantri Abadi coffee production business",
         "Implemented tracking system for raw coffee beans, processing status, and finished products",
@@ -126,7 +168,9 @@ const Projects = () => {
       ],
       technologies: [
         { name: "Golang", icon: <SiGo /> },
-        { name: "MySQL", icon: <SiMysql /> }
+        { name: "MySQL", icon: <SiMysql /> },
+        { name: "HTML/CSS", icon: <SiHtml5 /> },
+        { name: "JavaScript", icon: <SiJavascript /> }
       ],
       links: [
         { label: "GitHub", url: "https://github.com/agungferdi/wonosantri" }
@@ -137,6 +181,7 @@ const Projects = () => {
       title: "Wallet Tracking Web App",
       timeframe: "February 2023 – March 2023",
       description: "A web application to track wallet balance, expenses, and income with real-time updates.",
+      image: walletImage,
       bulletPoints: [
         "Built CRUD-based application for personal finance tracking",
         "Implemented features for adding, editing, and deleting transactions with real-time balance updates",
@@ -145,31 +190,16 @@ const Projects = () => {
       ],
       technologies: [
         { name: "Golang", icon: <SiGo /> },
-        { name: "MySQL", icon: <SiMysql /> }
+        { name: "MySQL", icon: <SiMysql /> },
+        { name: "HTML/CSS", icon: <SiHtml5 /> },
+        { name: "JavaScript", icon: <SiJavascript /> }
       ],
       links: [
         { label: "GitHub", url: "https://github.com/agungferdi/go-crud" }
       ]
     },
-    {
-      id: "smart-composter",
-      title: "Smart Composter Design",
-      timeframe: "2023",
-      description: "An IoT-based composter with automated controls, designed in AutoCAD and powered by Raspberry Pi.",
-      bulletPoints: [
-        "Designed automated composting system with temperature and moisture monitoring",
-        "Programmed Raspberry Pi to control aeration and mixing based on sensor readings",
-        "Created mobile app interface for remote monitoring and control",
-        "Implemented data logging for composting process optimization"
-      ],
-      technologies: [
-        { name: "Python", icon: <SiPython /> },
-        { name: "Raspberry Pi", icon: <SiRaspberrypi /> }
-      ]
-    }
   ];
   
-  // Rest of your component remains the same
   return (
     <div className="projects-page">
       <div className="projects-header">
@@ -180,13 +210,18 @@ const Projects = () => {
       <div className="projects-grid">
         {projects.map(project => (
           <div key={project.id} className={`project-card ${project.featured ? 'featured' : ''}`}>
+            {project.image && (
+              <div className="project-image-container">
+                <img src={project.image} alt={project.title} className="project-image" />
+              </div>
+            )}
             <div className="card-content">
               <h3>{project.title}</h3>
               <div className="timeframe">{project.timeframe}</div>
               
               <p className="description">{project.description}</p>
               
-              {/* Bullet points will only show on hover due to CSS */}
+              {}
               <ul className="bullet-points">
                 {project.bulletPoints.map((point, idx) => (
                   <li key={idx}>{point}</li>

@@ -1,127 +1,221 @@
-.about-page {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--text-dark, #2d3748);
+  font-weight: 700;
+}
+
+.section-icon {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  background: rgba(var(--primary-color-rgb, 59, 130, 246), 0.1);
+  padding: 0.75rem;
+  border-radius: 12px;
+  display: flex;
+}
+
+
+.about-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-intro .section-header {
+  justify-content: center;
+}
+
+.intro-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary, #4a5568);
+}
+
+
+.card-component {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  margin-bottom: 2rem;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+
+.card-component:has(.card-image-container) {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  height: 240px;
+}
+
+.card-component:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  border-color: rgba(var(--primary-color-rgb, 59, 130, 246), 0.15);
+}
+
+
+.card-image-container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.card-component:hover .card-image {
+  transform: scale(1.05);
+  filter: saturate(1.1);
+}
+
+
+.card-image-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.2),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-component:hover .card-image-container::after {
+  opacity: 1;
+}
+
+
+.card-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  width: 600px;
+  color: var(--text-dark, #2d3748);
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.card-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 600px;
+  height: 3px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.card-component:hover .card-title::after {
+  width: 900px;
+}
+
+.card-subtitle {
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+/* Updated timeframe to be centered */
+.card-timeframe {
+  display: block;
+  text-align: center;
+  padding: 0.4rem 0.8rem;
+  background: rgba(var(--primary-color-rgb, 59, 130, 246), 0.08);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--text-light, #718096);
+  margin: 0 auto 1rem;
+  width: fit-content;
+}
+
+.card-description {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Updated list items to have justified text */
+.card-description li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  color: var(--text-secondary, #4a5568);
+  text-align: justify;
+}
+
+.card-description li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+/* Badge styling */
+.card-component[data-badge]::before {
+  content: attr(data-badge);
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.35rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px 0 0 4px;
+  z-index: 1;
+  box-shadow: -2px 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-component:has(.card-image-container) {
+    grid-template-columns: 1fr;
+    height: auto;
   }
   
-  .about-intro {
-    margin-bottom: 4rem;
+  .card-image-container {
+    height: 200px;
   }
   
-  .about-intro h1 {
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
+  .card-image-container::after {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.2),
+      transparent 70%
+    );
   }
-  
-  .about-intro h1:after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 4px;
-    background: var(--primary-color);
-    bottom: -10px;
-    left: 0;
-    border-radius: 2px;
-  }
-  
-  .about-intro p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    text-align: justify;
-  }
-  
-  .education, .experience, .community-service, .organizations, .achievements {
-    margin-bottom: 3rem;
-  }
-  
-  .education h2, .experience h2, .community-service h2, .organizations h2, .achievements h2 {
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-  }
-  
-  /* New achievements grid layout */
-  .achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .achievement-card {
-    display: flex;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    height: 100%;
-  }
-  
-  .achievement-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-  }
-  
-  .achievement-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    font-size: 1.8rem;
-    color: white;
-  }
-  
-  .achievement-icon.first {
-    background: linear-gradient(145deg, #FFD700, #FFC107); /* Gold */
-  }
-  
-  .achievement-icon.bronze {
-    background: linear-gradient(145deg, #CD7F32, #A05A2C); /* Bronze */
-  }
-  
-  .achievement-icon.third {
-    background: linear-gradient(145deg, #6A8EAE, #5D7FA3); /* Blue */
-  }
-  
-  .achievement-icon.outstanding {
-    background: linear-gradient(145deg, #9C27B0, #673AB7); /* Purple */
-  }
-  
-  .achievement-content {
-    padding: 1rem;
-    flex: 1;
-  }
-  
-  .achievement-content h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1rem;
-    color: var(--primary-color);
-  }
-  
-  .achievement-content p {
-    margin: 0 0 0.5rem 0;
-    font-size: 0.9rem;
-    text-align: justify;
-  }
-  
-  .achievement-date {
-    display: block;
-    font-size: 0.8rem;
-    color: #777;
-  }
-  
-  @media (max-width: 768px) {
-    .about-intro h1 {
-      font-size: 2rem;
-    }
-    
-    .about-intro p {
-      font-size: 1rem;
-    }
-    
-    .achievements-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+}

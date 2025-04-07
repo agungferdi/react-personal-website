@@ -1,146 +1,112 @@
 import Card from '../components/common/Card'
 import './About.css'
-import { FaTrophy, FaMedal, FaAward, FaCertificate, FaGraduationCap } from 'react-icons/fa'
+import { 
+  FaGraduationCap, 
+  FaCode, 
+  FaUsers, 
+  FaSitemap 
+} from 'react-icons/fa6'
+
+
+import ubImage from '../assets/ub.jpeg'
+import wonoImage from '../assets/wono.jpeg'
+import kknImage from '../assets/kkn.png'
+import arscImage from '../assets/arsc.png'
+import bangelanImage from '../assets/bangelan.jpg'
 
 const About = () => {
   return (
     <div className="about-page">
       <section className="about-intro">
-        <h1>About Me</h1>
-        <p>
+        <div className="section-header">
+          <h1>About Me</h1>
+          <div className="decorative-line"></div>
+        </div>
+        <p className="intro-text">
           I am a fresh graduate from Brawijaya University with a strong focus on machine learning engineering 
-          and backend development. I specialize in building and optimizing machine learning models, 
-          particularly YOLO, for automation and data analysis. My expertise extends to developing IoT 
-          applications using Raspberry Pi and Arduino, integrating real-time data processing with 
-          intelligent systems.
+          and backend development. My expertise includes building optimized ML models, developing IoT systems, 
+          and creating full-stack applications.
         </p>
       </section>
 
       <section className="education">
-        <h2>Education</h2>
+        <div className="section-header">
+          <FaGraduationCap className="section-icon" />
+          <h2>Education</h2>
+        </div>
         <Card 
           title="Brawijaya University"
           subtitle="Agricultural Engineering and Biosystem, Faculty of Agricultural Technology"
           timeframe="August 2020 – February 2025"
-          description={["GPA: 3.49"]}
+          description={["GPA: 3.49", "Relevant Coursework: Data Structures, Machine Learning, IoT Systems"]}
+          image={ubImage}
         />
       </section>
 
       <section className="experience">
-        <h2>Internship Experiences</h2>
+        <div className="section-header">
+          <FaCode className="section-icon" />
+          <h2>Experience</h2>
+        </div>
         <Card 
-          title="Internship at PTPN XII Bangelan Plantation"
-          timeframe="January – February 2023"
-          description={[
-            "Developed a machine condition monitoring application using Golang integrated with IoT.",
-            "Created an employee performance monitoring application."
-          ]}
-        />
-        <Card 
-          title="Internship at KTH Wonosantri Abadi (Singosari Malang)"
+          title="KTH Wonosantri Abadi"
+          subtitle="Full-Stack Developer Intern"
           timeframe="August – September 2023"
           description={[
-            "Developed a full-stack web app to manage raw coffee stock, processing, and packaging."
+            "Built complete coffee stock management system from raw material to packaging",
+            "Implemented real-time inventory tracking features"
           ]}
+          image={wonoImage}
+          badge="Internship"
         />
-      </section>
-
-      <section className="community-service">
-        <h2>Community Service Program</h2>
-        <Card 
-          title="KKN at Toyomarto Village, Singosari, Malang"
-          timeframe="May – June 2022"
+         <Card 
+          title="PTPN XII Bangelan Plantation"
+          subtitle="Full Stack Intern"
+          timeframe="January – February 2023"
           description={[
-            "Led Focus Group Discussions (FGDs) on village waste management programs.",
-            "Managed a waste bank program in four neighborhood units (RT).",
-            "Led education programs on medicinal plants for school children, providing hands-on learning experiences.",
-            "Conducted training sessions and facilitated the implementation of composting systems."
+            "Developed web app for machine condition monitoring application using Golang",
+            "Created employee performance monitoring system with IoT integration"
           ]}
+          image={bangelanImage}
+          badge="Internship"
         />
       </section>
+      
+      <section className="organizational-experience">
+        <div className="section-header">
+          <FaSitemap className="section-icon" />
+          <h2>Organizational Experience</h2>
+        </div>
 
-      <section className="organizations">
-        <h2>Organizational Experience</h2>
+        
         <Card 
           title="Agritech Research Center and Study Club (ARSC)"
           subtitle="Junior Staff of Human Resource Development"
           timeframe="January – August 2021"
           description={[
-            "Designed and implemented skill development programs, including technical and soft skill training.",
-            "Coordinated training, workshops, and discussions on agricultural technology, IoT, and machine learning."
+            "Implemented skill development programs, including technical and soft skill training",
+            "Coordinated training, workshops, and discussions on IoT and machine learning"
           ]}
+          image={arscImage}
         />
       </section>
 
-      <section className="achievements">
-        <h2>Achievements</h2>
-        <div className="achievements-grid">
-          <div className="achievement-card">
-            <div className="achievement-icon bronze">
-              <FaMedal />
-            </div>
-            <div className="achievement-content">
-              <h3>Bronze Medal</h3>
-              <p>International Agriculture Great Competition (IAGC)</p>
-              <span className="achievement-date">March 2021</span>
-            </div>
-          </div>
-          
-          <div className="achievement-card">
-            <div className="achievement-icon third">
-              <FaTrophy />
-            </div>
-            <div className="achievement-content">
-              <h3>3rd Best</h3>
-              <p>Regional Innovation in Health Category and Top 10 in East Java</p>
-              <span className="achievement-date">August 2019</span>
-            </div>
-          </div>
-          
-          <div className="achievement-card">
-            <div className="achievement-icon third">
-              <FaAward />
-            </div>
-            <div className="achievement-content">
-              <h3>3rd Place</h3>
-              <p>Scientific League (Scientific Writing in Agricultural Technology)</p>
-              <span className="achievement-date">June 2021</span>
-            </div>
-          </div>
-          
-          <div className="achievement-card">
-            <div className="achievement-icon third">
-              <FaCertificate />
-            </div>
-            <div className="achievement-content">
-              <h3>3rd Place</h3>
-              <p>National Paper Competition for Diesnatalis FTP 23rd</p>
-              <span className="achievement-date">March 2021</span>
-            </div>
-          </div>
-          
-          <div className="achievement-card">
-            <div className="achievement-icon first">
-              <FaTrophy />
-            </div>
-            <div className="achievement-content">
-              <h3>1st Place</h3>
-              <p>Student Creativity Program (PKM) for Freshmen</p>
-              <span className="achievement-date">September 2020</span>
-            </div>
-          </div>
-          
-          <div className="achievement-card">
-            <div className="achievement-icon outstanding">
-              <FaGraduationCap />
-            </div>
-            <div className="achievement-content">
-              <h3>Outstanding Student Award</h3>
-              <p>Agricultural and Biosystem Engineering Program</p>
-              <span className="achievement-date">January 2021</span>
-            </div>
-          </div>
+      <section className="community-service">
+        <div className="section-header">
+          <FaUsers className="section-icon" />
+          <h2>Community Service</h2>
         </div>
+        <Card 
+          title="Toyomarto Village Development Program"
+          subtitle="Team Leader - KKN Initiative"
+          timeframe="May – June 2022"
+          description={[
+            "Led waste management program across 4 neighborhood units",
+            "Implemented composting system and medicinal plant education program"
+          ]}
+          image={kknImage}
+          badge="Social Project"
+        />
       </section>
     </div>
   )
