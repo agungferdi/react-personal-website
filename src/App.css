@@ -1,8 +1,33 @@
+:root {
+  --header-height: 70px;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* App container to take up full width */
+.app {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content area styles */
+.main-content {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  background: white;
+  margin-top: var(--header-height);
+  padding-top: 1rem;
 }
 
 .logo {
@@ -11,9 +36,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -39,4 +66,46 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 105px;
+  }
+  
+  #root {
+    padding: 1rem;
+    max-width: 100%;
+  }
+  
+  .main-content {
+    margin-top: var(--header-height);
+    padding-top: 0.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --header-height: 115px;
+  }
+  
+  #root {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  .app, 
+  .main-content {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 }

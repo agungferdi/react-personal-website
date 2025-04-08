@@ -1,6 +1,6 @@
 import './Projects.css'
 import { FaGithub, FaArrowUpRightFromSquare } from 'react-icons/fa6' 
-import { SiGo, SiPython, SiMysql, SiFlask, SiDocker, SiRaspberrypi, SiHtml5, SiOpencv, SiTensorflow, SiPhp, SiJavascript, SiBootstrap, SiReact } from 'react-icons/si'
+import { SiGo, SiPython, SiMysql, SiFlask, SiDocker, SiRaspberrypi, SiHtml5, SiOpencv, SiTensorflow, SiPhp, SiJavascript, SiBootstrap, SiReact, SiTypescript, SiVite } from 'react-icons/si'
 import { ReactNode } from 'react'
 import storeImage from '../assets/store.png'
 import compostImage from '../assets/compost.png'
@@ -9,6 +9,7 @@ import umkmImage from '../assets/umkm.png'
 import walletImage from '../assets/wallet.png'
 import pythonCrudImage from '../assets/index.png'
 import coffeeImage from '../assets/coffee.png'
+import websiteImage from '../assets/website.png'
 
 
 type ProjectLink = {
@@ -36,6 +37,7 @@ type Project = {
 const Projects = () => {
   
   const projects: Project[] = [
+    
     {
       id: "golang-web-store",
       title: "Golang Personal Web Store with Midtrans Payment",
@@ -155,6 +157,30 @@ const Projects = () => {
       ]
     },
     {
+      id: "react-personal-website",
+      title: "Personal Portfolio Website",
+      timeframe: "March 2025 – Present",
+      description: "A responsive personal portfolio website built with React and TypeScript, featuring project showcases, skills highlights, and contact functionality.",
+      image: websiteImage,
+      bulletPoints: [
+        "Designed and developed a modern portfolio website with React, TypeScript and custom CSS",
+        "Implemented responsive design for optimal viewing across all device sizes",
+        "Created interactive components including project cards with hover effects",
+        "Built a working contact form with email integration",
+        "Deployed with CI/CD pipeline for seamless updates"
+      ],
+      technologies: [
+        { name: "React", icon: <SiReact /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "Vite", icon: <SiVite /> },
+        { name: "HTML/CSS", icon: <SiHtml5 /> }
+      ],
+      links: [
+        { label: "GitHub", url: "https://github.com/agungferdi/react-personal-website.git" }
+      ],
+      featured: true
+    },
+    {
       id: "coffee-storage-app",
       title: "Coffee Bean Storage App for KTH Wonosantri",
       timeframe: "June – August 2023",
@@ -221,7 +247,6 @@ const Projects = () => {
               
               <p className="description">{project.description}</p>
               
-              {}
               <ul className="bullet-points">
                 {project.bulletPoints.map((point, idx) => (
                   <li key={idx}>{point}</li>

@@ -27,7 +27,7 @@ const Contact = () => {
     setIsLoading(true)
     setError(null)
     
-    // First, send the notification email to your inbox
+    
     emailjs.sendForm(
       'service_j9f4a1p',
       'template_cjtsqkh', 
@@ -35,16 +35,16 @@ const Contact = () => {
       'ldwnVcIn0uMfRRUnB'
     )
     .then(() => {
-      // Then send the auto-reply to the user
+      
       return emailjs.send(
         'service_j9f4a1p',
-        'template_mqe471b', // Your auto-reply template ID
+        'template_mqe471b', 
         {
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_email: formData.email // Send to the user who submitted the form
+          to_email: formData.email 
         },
         'ldwnVcIn0uMfRRUnB'
       );
@@ -53,7 +53,7 @@ const Contact = () => {
       console.log('Emails sent successfully:', result.text)
       setSubmitted(true)
       setIsLoading(false)
-      // Reset form
+      
       setFormData({
         name: '',
         email: '',

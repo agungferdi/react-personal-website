@@ -1,7 +1,7 @@
 .projects-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 3rem 1.5rem 2rem; /* REDUCED from 5rem to 3rem to move content higher */
 }
 
 .projects-header {
@@ -39,9 +39,8 @@
   margin: 2rem auto 0;
 }
 
-/* We're keeping these styles in case you want to add filters back later */
 .project-filters {
-  display: none; /* Hide filters as requested */
+  display: none; 
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 2.5rem;
@@ -84,29 +83,33 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 420px; /* Increased height to accommodate images */
-  border-top: 3px solid var(--primary-color); /* Added blue top border to all cards */
+  height: 550px; /* INCREASED from 510px to 550px for much taller images */
+  border-top: 3px solid var(--primary-color); 
 }
 
 .project-card.featured {
-  /* Keep any special styling for featured cards if needed */
-  /* Could add a stronger/different color or different thickness */
+  
 }
 
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  height: auto; /* Expand height on hover to fit bullet points */
-  z-index: 10; /* Ensure hovered card stays on top - increased from 1 to 10 */
+  height: auto; 
+  z-index: 10; /* Ensure hovered card stays on top */
 }
 
-/* New styles for project images */
+/* SIGNIFICANTLY LARGER image containers in static state */
 .project-image-container {
   width: 100%;
-  height: 180px;
+  height: 320px; /* INCREASED from 280px to 320px */
   overflow: hidden;
   border-radius: 12px 12px 0 0;
   position: relative;
+}
+
+/* Special fix for Smart Composter project - FURTHER REDUCED */
+#smart-composter .project-image-container {
+  height: 220px; /* REDUCED from 260px to 220px */
 }
 
 .project-image {
@@ -249,7 +252,31 @@
   color: white;
 }
 
+/* Add top padding for proper header spacing */
+@media (max-width: 992px) {
+  .projects-page {
+    padding-top: 4.5rem; /* REDUCED from 5.5rem to 4.5rem */
+  }
+  
+  .project-image-container {
+    height: 300px; /* INCREASED from 260px to 300px */
+  }
+  
+  /* Smart Composter project at medium screen size - FURTHER REDUCED */
+  #smart-composter .project-image-container {
+    height: 200px; /* REDUCED from 240px to 200px */
+  }
+  
+  .project-card {
+    height: 530px; /* INCREASED from 490px to 530px */
+  }
+}
+
 @media (max-width: 768px) {
+  .projects-page {
+    padding-top: 6.5rem; /* Increased padding to push content below header */
+  }
+  
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -261,10 +288,63 @@
   }
 
   .project-card {
-    height: auto; /* Make cards auto height on mobile */
+    height: 510px; /* INCREASED from 470px to 510px */
+  }
+  
+  .project-card:hover,
+  .project-card:active {
+    height: auto;
+    transform: translateY(-5px);
   }
   
   .project-image-container {
-    height: 160px; /* Slightly smaller images on mobile */
+    height: 280px; /* INCREASED from 240px to 280px */
+  }
+  
+  /* Smart Composter project at tablet size - FURTHER REDUCED */
+  #smart-composter .project-image-container {
+    height: 180px; /* REDUCED from 220px to 180px */
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-page {
+    padding-top: 8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .projects-header {
+    margin-bottom: 2rem;
+  }
+  
+  .project-card {
+    height: 520px; /* INCREASED from 460px to 520px to accommodate larger images */
+    margin-bottom: 2rem;
+  }
+  
+  .project-card:hover,
+  .project-card:active {
+    height: auto; /* Still expand on hover/touch */
+  }
+  
+  .project-image-container {
+    height: 320px; /* KEPT SAME as desktop size instead of reducing */
+  }
+  
+  /* Smart Composter project at mobile size - MATCH desktop size */
+  #smart-composter .project-image-container {
+    height: 220px; /* INCREASED from 160px to match desktop size */
+  }
+  
+  /* Fix for bullet points on mobile */
+  .bullet-points {
+    transform: translateY(0); /* No initial transform on mobile */
+  }
+  
+  /* Improve touch interaction on mobile */
+  .project-card:active .bullet-points {
+    display: block;
+    opacity: 1;
   }
 }

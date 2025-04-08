@@ -23,7 +23,8 @@ import {
   SiSvelte,
   SiBootstrap,
   SiJavascript,
-  SiRaspberrypi
+  SiRaspberrypi,
+  SiTypescript
 } from 'react-icons/si'
 
 
@@ -86,6 +87,7 @@ const Home = () => {
               <SkillItem icon={<FaReact />}>React</SkillItem>
               <SkillItem icon={<SiSvelte />}>Svelte</SkillItem>
               <SkillItem icon={<SiJavascript />}>JavaScript</SkillItem>
+              <SkillItem icon={<SiTypescript />}>TypeScript</SkillItem>
               <SkillItem icon={<SiBootstrap />}>Bootstrap</SkillItem>
               <SkillItem icon={<FaHtml5 />}>HTML5</SkillItem>
               <SkillItem icon={<FaCss3Alt />}>CSS3</SkillItem>
@@ -93,15 +95,15 @@ const Home = () => {
           </div>
           
           <div className="skill-category">
-  <h3>Machine Learning</h3>
-  <ul>
-    <SkillItem icon={<SiTensorflow />}>TensorFlow & PyTorch</SkillItem>
-    <SkillItem icon={<span className="custom-icon yolo">YL</span>}>YOLO</SkillItem>
-    <SkillItem icon={<SiOpencv />}>OpenCV</SkillItem>
-    <SkillItem icon={<SiScikitlearn />}>Scikit-Learn</SkillItem>
-    <SkillItem icon={<SiRaspberrypi />}>Raspberry Pi</SkillItem>
-  </ul>
-</div>
+             <h3>Machine Learning</h3>
+             <ul>
+                <SkillItem icon={<SiTensorflow />}>TensorFlow & PyTorch</SkillItem>
+                <SkillItem icon={<span className="custom-icon yolo">YL</span>}>YOLO</SkillItem>
+                <SkillItem icon={<SiOpencv />}>OpenCV</SkillItem>
+                <SkillItem icon={<SiScikitlearn />}>Scikit-Learn</SkillItem>
+                <SkillItem icon={<SiRaspberrypi />}>Raspberry Pi</SkillItem>
+              </ul>
+          </div>
           
           <div className="skill-category">
             <h3>Cloud & DevOps</h3>
