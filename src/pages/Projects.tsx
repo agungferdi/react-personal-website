@@ -230,7 +230,7 @@ const Projects = () => {
     <div className="projects-page">
       <div className="projects-header">
         <h1>My Projects</h1>
-        <p className="subtitle">Here are some of my recent projects that showcase my skills and experience.</p>
+        <p className="subtitle">Recent project highlights. Please click any project for details</p>
       </div>
       
       <div className="projects-grid">
