@@ -37,15 +37,15 @@
 
 
 .card-component {
-  padding: 0; /* Remove default padding */
+  padding: 0; 
   overflow: hidden;
 }
 
 .card-content {
-  padding: 1.5rem; /* Move padding from card-component to card-content */
+  padding: 1.5rem; 
 }
 
-/* Ensure vertical accent bar still works */
+
 .card-component::before {
-  z-index: 1; /* Ensure the accent bar appears above the image */
+  z-index: 1; 
 }

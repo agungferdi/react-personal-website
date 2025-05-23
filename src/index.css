@@ -75,13 +75,13 @@ button:focus-visible {
   button {
     background-color: #1a1a1a;
   }
-  /* Always keep body background light for our content */
+ 
   body {
     background-color: #ffffff;
   }
 }
 
-/* Add responsive behavior fixes */
+
 @media (max-width: 576px) {
   body {
     width: 100vw;

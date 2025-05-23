@@ -1,7 +1,7 @@
 .projects-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 1.5rem 2rem; /* REDUCED from 5rem to 3rem to move content higher */
+  padding: 3rem 1.5rem 2rem; 
 }
 
 .projects-header {
@@ -83,33 +83,31 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 550px; /* INCREASED from 510px to 550px for much taller images */
+  height: 550px; 
   border-top: 3px solid var(--primary-color); 
 }
 
-.project-card.featured {
-  
-}
+
 
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   height: auto; 
-  z-index: 10; /* Ensure hovered card stays on top */
+  z-index: 10; 
 }
 
-/* SIGNIFICANTLY LARGER image containers in static state */
+
 .project-image-container {
   width: 100%;
-  height: 320px; /* INCREASED from 280px to 320px */
+  height: 320px; 
   overflow: hidden;
   border-radius: 12px 12px 0 0;
   position: relative;
 }
 
-/* Special fix for Smart Composter project - FURTHER REDUCED */
+
 #smart-composter .project-image-container {
-  height: 220px; /* REDUCED from 260px to 220px */
+  height: 220px; 
 }
 
 .project-image {
@@ -123,7 +121,7 @@
   transform: scale(1.05);
 }
 
-/* Overlay effect on hover */
+
 .project-image-container::after {
   content: '';
   position: absolute;
@@ -165,14 +163,14 @@
   margin-bottom: 1rem;
   line-height: 1.5;
   flex: 1;
-  text-align: justify; /* Justify text as requested */
+  text-align: justify; 
 }
 
-/* Keep the hover effect for bullet points with improved styling */
+
 .bullet-points {
-  display: none; /* Hide the bullet points by default */
-  padding-left: 0; /* Remove default padding */
-  list-style: none; /* Remove default bullets */
+  display: none; 
+  padding-left: 0; 
+  list-style: none; 
   margin-bottom: 1rem;
   opacity: 0;
   transform: translateY(-10px);
@@ -180,12 +178,12 @@
 }
 
 .project-card:hover .bullet-points {
-  display: block; /* Show on hover */
+  display: block; 
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Custom bullet styling */
+
 .bullet-points li {
   margin-bottom: 0.8rem;
   line-height: 1.4;
@@ -193,7 +191,7 @@
   padding-left: 12px;
   border-left: 3px solid var(--primary-color);
   margin-left: 5px;
-  text-align: justify; /* Justify text in bullet points */
+  text-align: justify; 
 }
 
 .bullet-points li:first-child {
@@ -252,29 +250,29 @@
   color: white;
 }
 
-/* Add top padding for proper header spacing */
+
 @media (max-width: 992px) {
   .projects-page {
-    padding-top: 4.5rem; /* REDUCED from 5.5rem to 4.5rem */
+    padding-top: 4.5rem; 
   }
   
   .project-image-container {
-    height: 300px; /* INCREASED from 260px to 300px */
+    height: 300px; 
   }
   
-  /* Smart Composter project at medium screen size - FURTHER REDUCED */
+  
   #smart-composter .project-image-container {
-    height: 200px; /* REDUCED from 240px to 200px */
+    height: 200px; 
   }
   
   .project-card {
-    height: 530px; /* INCREASED from 490px to 530px */
+    height: 530px; 
   }
 }
 
 @media (max-width: 768px) {
   .projects-page {
-    padding-top: 6.5rem; /* Increased padding to push content below header */
+    padding-top: 6.5rem;
   }
   
   .projects-grid {
@@ -288,7 +286,7 @@
   }
 
   .project-card {
-    height: 510px; /* INCREASED from 470px to 510px */
+    height: 510px; 
   }
   
   .project-card:hover,
@@ -298,12 +296,12 @@
   }
   
   .project-image-container {
-    height: 280px; /* INCREASED from 240px to 280px */
+    height: 280px; 
   }
   
-  /* Smart Composter project at tablet size - FURTHER REDUCED */
+  
   #smart-composter .project-image-container {
-    height: 180px; /* REDUCED from 220px to 180px */
+    height: 180px; 
   }
 }
 
@@ -319,30 +317,30 @@
   }
   
   .project-card {
-    height: 520px; /* INCREASED from 460px to 520px to accommodate larger images */
+    height: 520px; 
     margin-bottom: 2rem;
   }
   
   .project-card:hover,
   .project-card:active {
-    height: auto; /* Still expand on hover/touch */
+    height: auto; 
   }
   
   .project-image-container {
-    height: 320px; /* KEPT SAME as desktop size instead of reducing */
+    height: 320px; 
   }
   
-  /* Smart Composter project at mobile size - MATCH desktop size */
+  
   #smart-composter .project-image-container {
-    height: 220px; /* INCREASED from 160px to match desktop size */
+    height: 220px; 
   }
   
-  /* Fix for bullet points on mobile */
+  
   .bullet-points {
-    transform: translateY(0); /* No initial transform on mobile */
+    transform: translateY(0); 
   }
   
-  /* Improve touch interaction on mobile */
+  
   .project-card:active .bullet-points {
     display: block;
     opacity: 1;

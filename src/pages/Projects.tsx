@@ -1,6 +1,6 @@
 import './Projects.css'
 import { FaGithub, FaArrowUpRightFromSquare } from 'react-icons/fa6' 
-import { SiGo, SiPython, SiMysql, SiFlask, SiDocker, SiRaspberrypi, SiHtml5, SiOpencv, SiTensorflow, SiPhp, SiJavascript, SiBootstrap, SiReact, SiTypescript, SiVite } from 'react-icons/si'
+import { SiGo, SiPython, SiMysql, SiFlask, SiDocker, SiRaspberrypi, SiHtml5, SiOpencv, SiTensorflow, SiPhp, SiJavascript, SiBootstrap, SiReact, SiTypescript, SiVite, SiPandas, SiScikitlearn } from 'react-icons/si'
 import { ReactNode } from 'react'
 import storeImage from '../assets/store.png'
 import compostImage from '../assets/compost.png'
@@ -10,6 +10,7 @@ import walletImage from '../assets/wallet.png'
 import pythonCrudImage from '../assets/index.png'
 import coffeeImage from '../assets/coffee.png'
 import websiteImage from '../assets/website.png'
+import cryptoImage from '../assets/cryptos.png'
 
 
 type ProjectLink = {
@@ -37,6 +38,33 @@ type Project = {
 const Projects = () => {
   
   const projects: Project[] = [
+    {
+      id: "crypto-price-forecast",
+      title: "Crypto Price Forecast Web App",
+      timeframe: "May 2025 – Present",
+      description: "A web application for forecasting cryptocurrency prices using machine learning models with interactive visualization tools.",
+      image: cryptoImage,
+      bulletPoints: [
+        "Developed a full-stack application for cryptocurrency price prediction and trend analysis",
+        "Implemented machine learning models to analyze historical data and generate price forecasts",
+        "Created interactive charts and visualizations for data exploration and analysis",
+        "Built with React for the frontend and Python for data processing and machine learning",
+        "Deployed to Vercel with continuous integration"
+      ],
+      technologies: [
+        { name: "React", icon: <SiReact /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "Python", icon: <SiPython /> },
+        { name: "TensorFlow", icon: <SiTensorflow /> },
+        { name: "Pandas", icon: <SiPandas /> },
+        { name: "Scikit-learn", icon: <SiScikitlearn /> }
+      ],
+      links: [
+        { label: "GitHub", url: "https://github.com/agungferdi/Crypto-Price-Forecast-Web-App.git" },
+        { label: "Live Demo", url: "https://crypto-price-forecast-web-app-c-git-main-agungferdis-projects.vercel.app/" }
+      ],
+      featured: true
+    },
     
     {
       id: "golang-web-store",

@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 2rem 2rem; /* Increased top padding to accommodate fixed header */
+  padding: 6rem 2rem 2rem; 
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   border-radius: 0 0 50px 50px;
   margin-bottom: 1rem;
@@ -21,8 +21,8 @@
   align-items: center;
   gap: 1rem;
   padding: 0 1rem;
-  position: relative; /* Added to establish stacking context */
-  z-index: 1; /* Ensure hero content appears above other elements */
+  position: relative; 
+  z-index: 1; 
 }
 
 .hero-text {
@@ -67,7 +67,7 @@
   animation: fadeIn 0.7s ease-in;
   perspective: 1000px;
   position: relative;
-  z-index: 5; /* Higher z-index to ensure image is above other elements */
+  z-index: 5; 
 }
 
 .profile-image {
@@ -204,7 +204,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 7rem; /* Increased top padding for tablet */
+    padding-top: 7rem; 
     min-height: 65vh;
   }
 
@@ -223,7 +223,7 @@
   
   .hero h2 {
     font-size: 1.4rem;
-    white-space: normal; /* Allow text to wrap */
+    white-space: normal; 
   }
   
   .cta-buttons {
@@ -249,7 +249,7 @@
 
 @media (max-width: 576px) {
   .hero {
-    padding-top: 6rem; /* Adjusted for mobile */
+    padding-top: 6rem; 
     min-height: auto;
     padding-bottom: 3rem;
   }

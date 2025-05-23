@@ -119,46 +119,46 @@
 
 @media (max-width: 576px) {
   .header {
-    padding: 0.7rem 0; /* Remove horizontal padding */
-    width: 100%; /* Full width */
+    padding: 0.7rem 0; 
+    width: 100%; 
     box-sizing: border-box;
     display: flex;
-    justify-content: center; /* Center the header content */
+    justify-content: center; 
     align-items: center;
   }
   
   .nav {
     max-width: 100%;
     display: flex;
-    justify-content: center; /* Center the nav */
+    justify-content: center; 
     align-items: center;
-    margin: 0 auto; /* Auto margins for centering */
+    margin: 0 auto; 
   }
   
   .nav-items {
-    width: 90%; /* Slightly less than 100% */
-    max-width: 400px; /* Maximum width */
-    margin: 0 auto; /* Auto margins for horizontal centering */
+    width: 90%; 
+    max-width: 400px; 
+    margin: 0 auto; 
     display: flex;
-    justify-content: center; /* Center flex items */
+    justify-content: center; 
     align-items: center;
-    gap: 10px; /* Add specific gap */
-    padding: 0 15px; /* Add horizontal padding */
+    gap: 10px;
+    padding: 0 15px; 
   }
   
   .nav-item {
-    display: inline-flex; /* Changed to inline-flex for better centering */
+    display: inline-flex; 
     text-align: center;
-    flex: 0 1 auto; /* Don't stretch items */
+    flex: 0 1 auto; 
     justify-content: center;
     align-items: center;
   }
   
   .nav-link {
     font-size: 0.9rem;
-    display: inline-block; /* Changed to inline-block */
+    display: inline-block;
     text-align: center;
-    padding: 0.5rem 0.5rem; /* Added horizontal padding */
-    width: auto; /* Let content determine width */
+    padding: 0.5rem 0.5rem; 
+    width: auto; 
   }
 }

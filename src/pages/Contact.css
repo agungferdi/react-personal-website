@@ -176,7 +176,7 @@
   .contact-page h1:after {
     content: '';
     position: absolute;
-    width: 120px; /* REDUCED from 200px to 120px */
+    width: 120px; 
     height: 4px;
     background: var(--primary-color);
     bottom: -10px;
