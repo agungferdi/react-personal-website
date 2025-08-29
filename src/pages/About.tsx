@@ -21,7 +21,7 @@ const About = () => {
       <Helmet>
         <title>About | Muhammad Agung Ferdiansyah</title>
         <meta name="description" content="Learn about Muhammad Agung Ferdiansyah's education, work experience, and skills as a Full Stack and Machine Learning Engineer." />
-        <link rel="canonical" href="https://www.agungferdi.com/about" />
+        <link rel="canonical" href="https://muhammadagungferdiansyah.vercel.app/about" />
         <meta name="keywords" content="software engineer background, machine learning education, Brawijaya University, full stack developer experience" />
         <script type="application/ld+json">
           {`

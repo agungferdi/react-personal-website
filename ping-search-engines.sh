@@ -3,7 +3,7 @@
 # Script to ping search engines with your sitemap URL
 # This should be run after a successful deployment
 
-SITEMAP_URL="https://www.agungferdi.com/sitemap.xml"
+SITEMAP_URL="https://muhammadagungferdiansyah.vercel.app/sitemap.xml"
 
 # Ping Google
 curl "https://www.google.com/ping?sitemap=$SITEMAP_URL"

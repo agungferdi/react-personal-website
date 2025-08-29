@@ -74,7 +74,7 @@ const Contact = () => {
       <Helmet>
         <title>Contact | Muhammad Agung Ferdiansyah</title>
         <meta name="description" content="Get in touch with Muhammad Agung Ferdiansyah for collaboration, job opportunities, or project inquiries." />
-        <link rel="canonical" href="https://www.agungferdi.com/contact" />
+        <link rel="canonical" href="https://muhammadagungferdiansyah.vercel.app/contact" />
         <meta name="keywords" content="contact software engineer, hire machine learning engineer, software development inquiry" />
         <script type="application/ld+json">
           {`

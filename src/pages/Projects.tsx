@@ -291,7 +291,7 @@ const Projects = () => {
       <Helmet>
         <title>Projects | Muhammad Agung Ferdiansyah</title>
         <meta name="description" content="Browse Muhammad Agung Ferdiansyah's portfolio of projects in machine learning, web development, IoT, and software engineering." />
-        <link rel="canonical" href="https://www.agungferdi.com/projects" />
+        <link rel="canonical" href="https://muhammadagungferdiansyah.vercel.app/projects" />
         <meta name="keywords" content="software projects, machine learning projects, IoT projects, full stack development, portfolio" />
         <script type="application/ld+json">
           {`

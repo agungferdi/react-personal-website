@@ -47,7 +47,7 @@ const Home = () => {
       <Helmet>
         <title>Muhammad Agung Ferdiansyah | Full Stack & ML Engineer</title>
         <meta name="description" content="Muhammad Agung Ferdiansyah is a Full Stack and Machine Learning Engineer specializing in Python, Golang, and IoT applications." />
-        <link rel="canonical" href="https://www.agungferdi.com/" />
+        <link rel="canonical" href="https://muhammadagungferdiansyah.vercel.app/" />
         <meta name="keywords" content="full stack developer, machine learning engineer, Python, Golang, React, TypeScript" />
         <script type="application/ld+json">
           {`
@@ -56,7 +56,7 @@ const Home = () => {
               "@type": "Person",
               "name": "Muhammad Agung Ferdiansyah",
               "jobTitle": "Full Stack and Machine Learning Engineer",
-              "url": "https://www.agungferdi.com/",
+              "url": "https://muhammadagungferdiansyah.vercel.app/",
               "sameAs": [
                 "https://github.com/agungferdi",
                 "https://www.linkedin.com/in/muhammad-agung-ferdiansyah/"
