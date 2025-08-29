@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import Button from '../components/common/Button'
 import './Home.css'
 import profileImage from '../assets/cek.jpeg'
@@ -43,6 +44,27 @@ const SkillItem = ({ icon, children }: SkillItemProps) => (
 const Home = () => {
   return (
     <div className="home-page">
+      <Helmet>
+        <title>Muhammad Agung Ferdiansyah | Full Stack & ML Engineer</title>
+        <meta name="description" content="Muhammad Agung Ferdiansyah is a Full Stack and Machine Learning Engineer specializing in Python, Golang, and IoT applications." />
+        <link rel="canonical" href="https://www.agungferdi.com/" />
+        <meta name="keywords" content="full stack developer, machine learning engineer, Python, Golang, React, TypeScript" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Muhammad Agung Ferdiansyah",
+              "jobTitle": "Full Stack and Machine Learning Engineer",
+              "url": "https://www.agungferdi.com/",
+              "sameAs": [
+                "https://github.com/agungferdi",
+                "https://www.linkedin.com/in/muhammad-agung-ferdiansyah/"
+              ]
+            }
+          `}
+        </script>
+      </Helmet>
       <section className="hero">
         <div className="hero-content">
           <div className="hero-text">

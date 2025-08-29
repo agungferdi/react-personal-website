@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { Helmet } from 'react-helmet-async'
 import Button from '../components/common/Button'
 import './Contact.css'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
@@ -70,6 +71,22 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
+      <Helmet>
+        <title>Contact | Muhammad Agung Ferdiansyah</title>
+        <meta name="description" content="Get in touch with Muhammad Agung Ferdiansyah for collaboration, job opportunities, or project inquiries." />
+        <link rel="canonical" href="https://www.agungferdi.com/contact" />
+        <meta name="keywords" content="contact software engineer, hire machine learning engineer, software development inquiry" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              "name": "Contact Muhammad Agung Ferdiansyah",
+              "description": "Contact form and information for reaching Muhammad Agung Ferdiansyah regarding job opportunities, collaborations, or project inquiries."
+            }
+          `}
+        </script>
+      </Helmet>
       <h1>Contact Me</h1>
       
       <div className="contact-container">

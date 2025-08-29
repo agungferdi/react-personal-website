@@ -1,4 +1,5 @@
 import './Projects.css'
+import { Helmet } from 'react-helmet-async'
 import { FaGithub, FaArrowUpRightFromSquare } from 'react-icons/fa6' 
 import { SiGo, SiPython, SiMysql, SiFlask, SiDocker, SiRaspberrypi, SiHtml5, SiOpencv, SiTensorflow, SiPhp, SiJavascript, SiBootstrap, SiReact, SiTypescript, SiVite, SiPandas, SiScikitlearn, SiSupabase, SiPostgresql, SiCplusplus } from 'react-icons/si'
 import { ReactNode } from 'react'
@@ -287,6 +288,39 @@ const Projects = () => {
   
   return (
     <div className="projects-page">
+      <Helmet>
+        <title>Projects | Muhammad Agung Ferdiansyah</title>
+        <meta name="description" content="Browse Muhammad Agung Ferdiansyah's portfolio of projects in machine learning, web development, IoT, and software engineering." />
+        <link rel="canonical" href="https://www.agungferdi.com/projects" />
+        <meta name="keywords" content="software projects, machine learning projects, IoT projects, full stack development, portfolio" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "CollectionPage",
+              "headline": "Software Development and Machine Learning Projects",
+              "description": "Browse Muhammad Agung Ferdiansyah's portfolio of projects in machine learning, web development, IoT, and software engineering.",
+              "mainEntity": {
+                "@type": "ItemList",
+                "itemListElement": [
+                  {
+                    "@type": "SoftwareApplication",
+                    "name": "Smart Irrigation IoT System",
+                    "applicationCategory": "IoT",
+                    "operatingSystem": "Cross-platform"
+                  },
+                  {
+                    "@type": "SoftwareApplication",
+                    "name": "Crypto Price Forecast Web App",
+                    "applicationCategory": "Web Application",
+                    "operatingSystem": "Cross-platform"
+                  }
+                ]
+              }
+            }
+          `}
+        </script>
+      </Helmet>
       <div className="projects-header">
         <h1>My Projects</h1>
         <p className="subtitle">Recent project highlights. Please click any project for details</p>

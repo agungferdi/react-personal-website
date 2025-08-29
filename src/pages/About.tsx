@@ -1,4 +1,5 @@
 import Card from '../components/common/Card'
+import { Helmet } from 'react-helmet-async'
 import './About.css'
 import { 
   FaGraduationCap, 
@@ -17,6 +18,28 @@ import bangelanImage from '../assets/bangelan.jpg'
 const About = () => {
   return (
     <div className="about-page">
+      <Helmet>
+        <title>About | Muhammad Agung Ferdiansyah</title>
+        <meta name="description" content="Learn about Muhammad Agung Ferdiansyah's education, work experience, and skills as a Full Stack and Machine Learning Engineer." />
+        <link rel="canonical" href="https://www.agungferdi.com/about" />
+        <meta name="keywords" content="software engineer background, machine learning education, Brawijaya University, full stack developer experience" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "name": "About Muhammad Agung Ferdiansyah",
+              "description": "Information about Muhammad Agung Ferdiansyah's education, experience, and skills in software engineering and machine learning.",
+              "mainEntity": {
+                "@type": "Person",
+                "name": "Muhammad Agung Ferdiansyah",
+                "alumniOf": "Brawijaya University",
+                "jobTitle": "Full Stack and Machine Learning Engineer"
+              }
+            }
+          `}
+        </script>
+      </Helmet>
       <section className="about-intro">
         <div className="section-header">
           <h1>About Me</h1>
