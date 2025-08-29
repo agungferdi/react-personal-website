@@ -1,6 +1,6 @@
 import './Projects.css'
 import { FaGithub, FaArrowUpRightFromSquare } from 'react-icons/fa6' 
-import { SiGo, SiPython, SiMysql, SiFlask, SiDocker, SiRaspberrypi, SiHtml5, SiOpencv, SiTensorflow, SiPhp, SiJavascript, SiBootstrap, SiReact, SiTypescript, SiVite, SiPandas, SiScikitlearn } from 'react-icons/si'
+import { SiGo, SiPython, SiMysql, SiFlask, SiDocker, SiRaspberrypi, SiHtml5, SiOpencv, SiTensorflow, SiPhp, SiJavascript, SiBootstrap, SiReact, SiTypescript, SiVite, SiPandas, SiScikitlearn, SiSupabase, SiPostgresql, SiCplusplus } from 'react-icons/si'
 import { ReactNode } from 'react'
 import storeImage from '../assets/store.png'
 import compostImage from '../assets/compost.png'
@@ -11,6 +11,7 @@ import pythonCrudImage from '../assets/index.png'
 import coffeeImage from '../assets/coffee.png'
 import websiteImage from '../assets/website.png'
 import cryptoImage from '../assets/cryptos.png'
+import iotWebImage from '../assets/iot_web.png'
 
 
 type ProjectLink = {
@@ -38,6 +39,36 @@ type Project = {
 const Projects = () => {
   
   const projects: Project[] = [
+    {
+      id: "smart-farming",
+      title: "Smart Irrigation IoT System",
+      timeframe: "March 2025 – Present",
+      description: "A comprehensive IoT smart irrigation system using ESP32, environmental sensors, and a real-time web dashboard for automated plant watering.",
+      image: iotWebImage,
+      bulletPoints: [
+        "Designed and developed a full-stack IoT solution for automated plant irrigation",
+        "Implemented real-time monitoring of temperature, humidity, soil moisture, and rain detection",
+        "Created automated water pump control based on environmental sensor thresholds",
+        "Built a modern web dashboard with TypeScript and React for real-time data visualization",
+        "Developed a high-performance backend using Hono.js and TypeScript with RESTful API endpoints",
+        "Created API services for sensor data storage, relay logs, and environmental thresholds configuration",
+        "Integrated with Supabase PostgreSQL for cloud database storage with Prisma ORM",
+        "Engineered ESP32-based hardware with DHT11, soil moisture sensor, and relay module"
+      ],
+      technologies: [
+        { name: "C++", icon: <SiCplusplus /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "React", icon: <SiReact /> },
+        { name: "Supabase", icon: <SiSupabase /> },
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
+        { name: "IoT", icon: <SiRaspberrypi /> }
+      ],
+      links: [
+        { label: "GitHub", url: "https://github.com/agungferdi/Smart_Farming" },
+        { label: "Backend URL", url: "https://smart-farming-ashy-omega.vercel.app/" }
+      ],
+      featured: true
+    },
     {
       id: "crypto-price-forecast",
       title: "Crypto Price Forecast Web App",
