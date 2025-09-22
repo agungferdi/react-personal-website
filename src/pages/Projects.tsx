@@ -66,7 +66,9 @@ const Projects = () => {
       ],
       links: [
         { label: "GitHub", url: "https://github.com/agungferdi/Smart_Farming" },
-        { label: "Backend URL", url: "https://smart-farming-ashy-omega.vercel.app/" }
+        { label: "Backend URL", url: "https://smart-farming-ashy-omega.vercel.app/" },
+        { label: "Dashboard", url: "https://smart-farming-dashboard-eosin.vercel.app/" },
+        { label: "Reels Instagram", url: "https://www.instagram.com/reel/DOSdX09kXsl/?igsh=MTBpOHRwOGp0ZWN3NA==" }
       ],
       featured: true
     },
